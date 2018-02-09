@@ -16,6 +16,7 @@ if (isset($_POST['montant']) && $_POST['montant'] != 0 && $_POST['montant'] != '
 
 else{
 
-    echo "veuillez inserez un nb valide";
-    include_once ('./formConvertisseur.php');
+    echo "veuillez inserez un nombre valide";
+    echo '<br><a href="../index.php">Retour</a>';
+
 }
