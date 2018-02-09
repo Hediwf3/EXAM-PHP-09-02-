@@ -13,7 +13,7 @@ $bdd = new PDO($_SESSION['host'], $_SESSION['ndcSQL'], $_SESSION['mdpSQL']);
 
 
 
-    //if(!testExist('title') && !testExist('storyline')) {
+    if(!testExist('title') && !testExist('storyline')) {
 
         $req = $bdd->prepare('INSERT INTO movies (title, actors, director, producer, year_of_prod, langue, category, storyline, video ) VALUES(:title, :actors, :director, :producer, :year_of_prod, :langue, :category, :storyline, :video)');
         $req->execute(array(
@@ -29,11 +29,16 @@ $bdd = new PDO($_SESSION['host'], $_SESSION['ndcSQL'], $_SESSION['mdpSQL']);
 
         ));
 
-        //echo "le film a bien été ajouté";
-   // }
-   // else{
-       // echo 'ce film est déja dans notre base de donnée';
-  //  }
+        echo "le film a bien été ajouté";
+
+        echo '<br><a href="../index.php">Souhaitez vous ajouter un autre film ? </a> <br>
+               <a href="afficheFilms.php">Voir tous les films </a>
+';
+
+    }
+    else{
+        echo 'ce film est déja dans notre base de donnée';
+   }
 
 
 
