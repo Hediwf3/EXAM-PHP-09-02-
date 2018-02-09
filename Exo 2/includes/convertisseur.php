@@ -11,7 +11,7 @@
 if (isset($_POST['montant']) && $_POST['montant'] != 0 && $_POST['montant'] != ''){
 
     $conversion = $_POST['montant']*1.085965;
-    echo $conversion;
+    echo $_POST['montant'] . ' euros est égale à ' . $conversion . ' dollars ';
 }
 
 else{
